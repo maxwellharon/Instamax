@@ -50,4 +50,8 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+    @classmethod
+    def update_caption(cls,id,caption):
+        captioned = Image.objects.filter(id=id).update(caption = caption)
+        return captioned
 # Create your models here.
