@@ -18,4 +18,18 @@ class Profile(models.Model):
     def delete_profile(self):
         self.delete()
 
+    @classmethod
+    def get_profile(cls):
+        profile = Profile.objects.all()
+        return profile
+
+    @classmethod
+    def find_profile(cls,search_term):
+        profile = cls.objects.filter(user__username__icontains=search_term)
+        return profile
+
+    @classmethod
+    def update_profile(cls,id,bio):
+        updated = Image.objects.filter(id=id).update(bio = bio)
+        return updated
 # Create your models here.
