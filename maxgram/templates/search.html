@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block content %}
 {{block.super}}
 <div class="container mt-5">
@@ -8,7 +9,7 @@
         {% if username %}
         <h2>{{username | length}} user found</h2>
         {% else %}
-        <h2>Found  users for the Username {{message | title}} Please consider ckecking the case and try again..</h2>
+        <h2>Found 0 users for the searched name {{message | title}}</h2>
         {% endif %}
     </div>
     <div class="row">
