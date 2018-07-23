@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 # Create your models here.
 
 class Profile(models.Model):
@@ -92,6 +93,3 @@ class Comment(models.Model):
     def get_comment(cls):
         comment = Comment.objects.all()
         return comment
-from django.db import models
-
-# Create your models here.
