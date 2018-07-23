@@ -1,6 +1,6 @@
 # Maxgram
 ## Maxwell Haron
-#####  Maxgram is a web based application clone of the famous instagram site whereby the users of Maxgram can be able to sign in to the application,Upoad pictures,Create profiles,view other peoples profiles,follow other users and and see their pictures on their respective timelines and finally,like a picture and leave a comment on it.
+####  Maxgram is a web based application clone of the famous instagram site whereby the users of Maxgram can be able to sign in to the application,Upoad pictures,Create profiles,view other peoples profiles,follow other users and and see their pictures on their respective timelines and finally,like a picture and leave a comment on it.
  23rd July 2018 12:36:38
 ### By **Maxwell Haron**
 ## Installation Requirements
