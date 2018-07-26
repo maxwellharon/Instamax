@@ -4,6 +4,7 @@ from django.http import HttpResponse,Http404
 from .models import Image,Profile,Comment
 from .forms import EditProfileForm,UploadForm,CommentForm
 from django.contrib.auth.models import User
+from friendship.models import Friend,Follow,Block
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -20,17 +21,25 @@ def home(request):
                                         "images":image,})
 
 @login_required(login_url='/accounts/login/')
-def profile(request):
+def profile(request,user_id):
     title = 'Maxgram'
     current_user = request.user
     profile = Profile.get_profile()
     image = Image.get_images()
     comments = Comment.get_comment()
+    users = User.objects.get(id=user_id)
+    follow = Follow.objects.add_follower(request.user, users)
+    followers = len(Follow.objects.followers(users))
+    following = len(Follow.objects.following(users))
     return render(request,'profile/profile.html',{"title":title,
                                                   "comments":comments,
                                                   "image":image,
                                                   "user":current_user,
-                                                  "profile":profile,})
+                                                  "profile":profile,
+                                                  "follow":follow,
+                                                  "users":users,
+                                                  "followers":followers,
+                                                  "following":following})
 
 
 @login_required(login_url='/accounts/login/')
