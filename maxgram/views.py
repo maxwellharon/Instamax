@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def home(request):
-    title = 'MaxgramKid'
+    title = 'Maxgram :-)'
     current_user = request.user
     profile = Profile.get_profile()
     image = Image.get_images()
@@ -21,7 +21,7 @@ def home(request):
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
-    title = 'Maxgram'
+    title = 'Maxgram :-)'
     current_user = request.user
     profile = Profile.get_profile()
     image = Image.get_images()
@@ -35,7 +35,7 @@ def profile(request):
 
 @login_required(login_url='/accounts/login/')
 def settings(request):
-    title = 'MaxgramKid'
+    title = 'Maxgram :-)'
     settings = Profile.get_profile()
     return render(request,'profile/settings.html',{"settings":settings,
                                                     "title":title,})
@@ -44,7 +44,7 @@ def settings(request):
 
 @login_required(login_url='/accounts/login/')
 def edit(request):
-    title = 'Maxgram-Gram'
+    title = 'Maxgram :-)'
     current_user = request.user
     if request.method == 'POST':
         form = EditProfileForm(request.POST,request.FILES)
@@ -60,7 +60,7 @@ def edit(request):
 
 @login_required(login_url="/accounts/login/")
 def upload(request):
-    title = 'Maxgram-Gram'
+    title = 'Maxgram :-)'
     current_user = request.user
     profiles = Profile.get_profile()
     for profile in profiles:
@@ -95,7 +95,7 @@ def search_results(request):
                                              "user":current_user,
                                              "username":searched_name})
     else:
-        message = "You haven't searched for any term"
+        message = "You haven't searched for any user"
         return render(request,'search.html',{"message":message})
 
 @login_required(login_url='/accounts/login/')
@@ -119,7 +119,7 @@ def new_comment(request,pk):
 
 @login_required(login_url="/accounts/login/")
 def view_your_profile(request,pk):
-    title =  "Maxgram-gram"
+    title =  "Maxgram :-)"
     current_user = request.user
     image = Image.get_images()
     profile = Profile.get_profile()
