@@ -35,7 +35,7 @@ def profile(request):
 
 @login_required(login_url='/accounts/login/')
 def settings(request):
-    title = 'MaxgramKid'
+    title = 'Maxgram :-)'
     settings = Profile.get_profile()
     return render(request,'profile/settings.html',{"settings":settings,
                                                     "title":title,})
@@ -44,7 +44,7 @@ def settings(request):
 
 @login_required(login_url='/accounts/login/')
 def edit(request):
-    title = 'Maxgram-Gram'
+    title = 'Maxgram :-)'
     current_user = request.user
     if request.method == 'POST':
         form = EditProfileForm(request.POST,request.FILES)
@@ -60,7 +60,7 @@ def edit(request):
 
 @login_required(login_url="/accounts/login/")
 def upload(request):
-    title = 'Maxgram-Gram'
+    title = 'Maxgram :-)'
     current_user = request.user
     profiles = Profile.get_profile()
     for profile in profiles:
@@ -119,7 +119,7 @@ def new_comment(request,pk):
 
 @login_required(login_url="/accounts/login/")
 def view_your_profile(request,pk):
-    title =  "Maxgram-gram"
+    title =  "Maxgram :-)"
     current_user = request.user
     image = Image.get_images()
     profile = Profile.get_profile()
