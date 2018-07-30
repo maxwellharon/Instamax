@@ -95,7 +95,7 @@ def search_results(request):
                                              "user":current_user,
                                              "username":searched_name})
     else:
-        message = "You haven't searched for any term"
+        message = "You haven't searched for any user"
         return render(request,'search.html',{"message":message})
 
 @login_required(login_url='/accounts/login/')
